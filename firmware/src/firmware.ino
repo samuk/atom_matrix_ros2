@@ -26,6 +26,12 @@
 #include <geometry_msgs/msg/twist.h>
 #include <geometry_msgs/msg/vector3.h>
 #include "M5Atom.h"
+//SimpleFOC includes https://github.com/simplefoc/Arduino-FOC-drivers/tree/master/src/comms/i2c#controller-device-brain-mcu
+#include "Arduino.h"
+#include <Wire.h>
+#include <SimpleFOC.h>
+#include "SimpleFOCDrivers.h"
+#include "comms/i2c/I2CCommanderMaster.h"
 
 #define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){rclErrorLoop();}}
 #define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){}}
