@@ -45,8 +45,8 @@ void setup() {
     //commander.addI2CMotors(TARGET_I2C_ADDRESS2, 1);         // you could add another target device on the same bus
     //commander.addI2CMotors(TARGET_I2C_ADDRESS, 1, &wire2);  // or on a different i2c bus
     commander.init();               // init commander
-    Wire.onReceive(onReceive);      // connect the interrupt handlers
-    Wire.onRequest(onRequest);
+    // Wire.onReceive(onReceive);      // connect the interrupt handlers - Unclear how to do this
+    //Wire.onRequest(onRequest);
     
   // end SimpleFOC stuff  
 
