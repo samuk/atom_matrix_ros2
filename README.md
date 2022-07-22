@@ -27,7 +27,7 @@ ROS2 driver for ESP32 Micro-controllers.
 ### 2.3  Install https://github.com/surfertas/ros2_ipcamera
 
     sudo apt install rospack-tools ros-humble-cv-bridgelibcamera-info-manager0d libcamera-info-manager-dev
-
+    rosdep install --from-paths src -i -r -y
     git clone https://github.com/surfertas/ros2_ipcamera.git
     colcon build --symlink-install
     . install/setup.bash
