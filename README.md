@@ -1,5 +1,5 @@
-## atom_matrix_ros2
-ROS2 driver for M5 Stack's Atom Matrix Micro-controller.
+## ESP32_ros2
+ROS2 driver for ESP32 Micro-controllers.
 
 ## 1. Installation
 ### 1.1 Install the ROS2 driver and its dependencies:
@@ -8,6 +8,8 @@ ROS2 driver for M5 Stack's Atom Matrix Micro-controller.
     git clone https://github.com/grassjelly/atom_matrix_ros2 src/atrom_matrix_ros2
     rosdep install --from-paths src -i -r -y
     colcon build
+    
+    
 
 ## 2. Installing the firmware
 
@@ -21,10 +23,22 @@ ROS2 driver for M5 Stack's Atom Matrix Micro-controller.
 
     cd atom_matrix_ros2/firmware
     pio run --target upload
+    
+### 2.3  Install https://github.com/surfertas/ros2_ipcamera
+
+    sudo apt install rospack-tools ros-humble-cv-bridgelibcamera-info-manager0d libcamera-info-manager-dev
+
+    git clone https://github.com/surfertas/ros2_ipcamera.git
+    colcon build --symlink-install
+    . install/setup.bash
 
 ## 3. Running the driver
 
-### 3.1 Run the launch file to run the [microROS agent](https://github.com/micro-ROS/micro-ROS-Agent) and [IMU Madgwick Filter](https://index.ros.org/p/imu_filter_madgwick/)
+### 3.1 
+Add sourcing to your shell startup script
+    echo "source /opt/ros/dashing/setup.bash" >> ~/.bashrc
+
+Run the launch file to run the [microROS agent](https://github.com/micro-ROS/micro-ROS-Agent) and [IMU Madgwick Filter](https://index.ros.org/p/imu_filter_madgwick/)
 
     ros2 launch atom_matrix_ros2 imu.launch
 
