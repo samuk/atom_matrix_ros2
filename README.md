@@ -18,6 +18,10 @@ ROS2 driver for ESP32 Micro-controllers.
     echo "PATH=\"\$PATH:\$HOME/.platformio/penv/bin\"" >> $HOME/.bashrc
     source $HOME/.bashrc
 
+### 2.15 notes for using with Linorobot2.
+    ubuntu@ubuntu:~/linorobot2_hardware/firmware$ sudo nano lib/imu/I2Cdev.cpp
+    Then comment out https://github.com/jrowberg/i2cdevlib/issues/346#issuecomment-619227194
+
 ### 2.2 Install the firmware to the Atom Matrix
 
     cd atom_matrix_ros2/firmware
